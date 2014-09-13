@@ -9,6 +9,7 @@
     <br><br>
     <button type="button" onClick="onClick3()" id="led2onbutton"  onclick="switchLED(2,1)">LED 2 On</button>
     <button type="button" onClick="onClick4()" id="led2offbutton"  onclick="switchLED(2,0)">LED 2 Off</button>
+    <button type="button" onClick="reset()" id="resetbutton">RESET</button> 
     <br><br>
 
     <script type="text/javascript">
@@ -22,24 +23,47 @@
       var clicks3 = 0;
       var clicks4 = 0;
 
+      function reset() {
+        clicks1 = 0;
+        clicks2 = 0;
+        clicks3 = 0;
+        clicks4 = 0;
+      }
+
       function onClick1() {
-        clicks1 += 1;
-        document.getElementById("clicks1").innerHTML = clicks1;
+        if (clicks1 < 100) { 
+          clicks1 += 1;
+          document.getElementById("clicks1").innerHTML = clicks1;
+        } else {
+            alert("Over 100!");
+        }
       };
 
       function onClick2() {
-        clicks2 += 1;
-        document.getElementById("clicks2").innerHTML = clicks2;
+        if (clicks2 < 100) {
+          clicks2 += 1;
+          document.getElementById("clicks2").innerHTML = clicks2;
+        } else {
+            alert("Over 100!")
+        }
       };
 
       function onClick3() {
-        clicks3 += 1;
-        document.getElementById("clicks3").innerHTML = clicks3;
+        if (clicks3 < 100) {
+          clicks3 += 1;
+          document.getElementById("clicks3").innerHTML = clicks3;
+        } else{  
+            alert("Over 100!")
+        } 
       };
 
       function onClick4() {
-        clicks4 += 1;
-        document.getElementById("clicks4").innerHTML = clicks4;
+        if (clicks4 < 100) {
+          clicks4 += 1;
+          document.getElementById("clicks4").innerHTML = clicks4;
+        } else {
+          alert("Over 100!")
+        }
       };
 
       document.onkeydown = function(evt) {
