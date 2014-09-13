@@ -9,7 +9,12 @@
     <br><br>
     <button type="button" onClick="onClick3()" id="led2onbutton"  onclick="switchLED(2,1)">LED 2 On</button>
     <button type="button" onClick="onClick4()" id="led2offbutton"  onclick="switchLED(2,0)">LED 2 Off</button>
-    <button type="button" onClick="reset()" id="resetbutton">RESET</button> 
+    <br><br>
+    
+    <input type="button" value="RESET 1" id="reset" onclick="document.getElementById('clicks1').innerHTML = 0;" />
+    <input type="button" value="RESET 2" id="reset" onclick="document.getElementById('clicks2').innerHTML = 0;" />
+    <input type="button" value="RESET 3" id="reset" onclick="document.getElementById('clicks3').innerHTML = 0;" />
+    <input type="button" value="RESET 4" id="reset" onclick="document.getElementById('clicks4').innerHTML = 0;" />
     <br><br>
 
     <script type="text/javascript">
@@ -22,13 +27,6 @@
       var clicks2 = 0;
       var clicks3 = 0;
       var clicks4 = 0;
-
-      function reset() {
-        clicks1 = 0;
-        clicks2 = 0;
-        clicks3 = 0;
-        clicks4 = 0;
-      }
 
       function onClick1() {
         if (clicks1 < 100) { 
@@ -71,18 +69,40 @@
         switch (evt.keyCode) {
           case 37:
             switchLED(1,1);
+            onClick1();
             break;
           case 39:
             switchLED(1,0);
+            onClick2();
             break;
           case 38:
             switchLED(2,1);
+            onClick3();
             break;
           case 40:
             switchLED(2,0);
+            onClick4();
             break;
         }
-      }
+      };
+
+      document.onkeypress = function(e) {
+        e = e || window.event;
+        switch (evt1.keyCode) {
+          case 49:
+            document.getElementById('clicks1').innerHTML = 0;
+            break;
+          case 50:
+            document.getElementById('clicks2').innerHTML = 0;
+            break;
+          case 51:
+            document.getElementById('clicks3').innerHTML = 0;
+            break;
+          case 52:
+            document.getElementById('clicks4').innerHTML = 0;
+            break;
+        }
+      };
 
       function switchLED(ledn,newValue) {
         var paramStr = "l" + ledn.toString();
@@ -119,7 +139,7 @@
 
     </script>
   <body>
-    <p>LED1 ON: <a id="clicks1">0</a></p>
+    <p>LED1 ON: <a id="clicks1">0</a></p> 
     <p>LED1 OFF: <a id="clicks2">0</a></p>
     <p>LED2 ON: <a id="clicks3">0</a></p>
     <p>LED2 OFF: <a id="clicks4">0</a></p>
