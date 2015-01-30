@@ -4,3 +4,5 @@ saprk1
  
  left, up - on
  right, down - off
+ 
+ Please, change the Device ID and Access token in the index.html file to your own device's.
