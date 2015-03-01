@@ -19,14 +19,30 @@
 
     <script type="text/javascript">
 
-      var deviceID    = "55ff6d065075555315131787";
-      var accessToken = "51527695cb8e07ea6c8858efa85011a8bfe594a5";
+      var deviceID    = "53ff70066667574856492467";
+      var accessToken = "82dffc805d586cdf3225858f57cb0c17637feae6";
       var setFunc = "led";
       
       var clicks1 = 0;
       var clicks2 = 0;
       var clicks3 = 0;
       var clicks4 = 0;
+
+      function reset1() {
+        click1 = 0;
+      }
+
+      function reset2() {
+        click2 = 0;
+      }
+
+      function reset3() {
+        click3 = 0;
+      }
+
+      function reset4() {
+        click4 = 0;
+      }
 
       function onClick1() {
         if (clicks1 < 100) { 
